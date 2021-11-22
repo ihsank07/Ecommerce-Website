@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tüm Kategoriler{% endblock %}
+
+{% block body %}
+{% include 'admin/menu.html.twig' %}
+<table class = " table">
+    <thead>
+        <tr>
+        <th>Adress</th>
+        <th>Şehir</th>
+        <th>Posto Kodu</th>
+        <th>Ödeme Şekli</th>
+        <th>Tutar</th>
+    <tbody>
+
+    {% for items in items %}
+        <tr>
+    
+            <td>{{items.address}}</td>
+            <td>{{items.city}}</td>
+            <td>{{items.postcode}}</td>
+            <td>{{items.paymentmethod}}</td>
+            <td>{{items.price}}</td>
+            <td>    
+      
+        </td>
+        </tr>
+        
+    {% endfor %}
+{% endblock %}

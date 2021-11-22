@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ürün Sayfası!{% endblock %}
+
+{% block body %}
+
+
+<a href="{{path('admin_product_create')}}" class="btn btn-primary">Yeni İçerik Ekle</a>
+
+
+<table class = " table">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Kategori</th>
+    <tbody>
+        {% for item in items%}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            {% for category in item.category %}
+                  <td>{{ category.name }}</td>
+            {% endfor %}
+        <td>
+          <a href="{{path('product_remove',{id: item.id})}}" class="delete" onclick="return confirm('Emin misin=?' )">Sil </a>
+        </td>
+        
+        </tr>
+      {% endfor %}
+{% endblock %}

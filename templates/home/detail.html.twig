@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hoşgeldiniz!{% endblock %}
+{% block body %}
+ {% include 'inc/navbar.html.twig'  %}  
+<div class="container">
+
+
+    <div class="row">    
+    
+       
+            {% for pro in pro %}
+             <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/200x150" alt="{{ pro.name }}" class="card-img-top">       
+                    <div class="card-body">
+                    <h5 class="card-title">{{ pro.name }}</h5>
+                    <p class="card-text">{{ pro.description }}</p>
+           
+            <div class="d-flex justify-content-between align-item-center">
+                    <a href="{{ path('product.detail', {id: pro.id}) }}" class="btn btn-dark">
+                    Detayları Görüntüle
+                    </a>
+                    <span class="h5 mt-auto">{{ pro.price }}
+                     TL
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+    {% endfor %}
+
+</div>
+
+{% endblock %}

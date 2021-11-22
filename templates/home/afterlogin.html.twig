@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Hoşgeldiniz!{% endblock %}
+
+{% block body %}
+ {{ include ('inc/navbar.html.twig' )}}  
+
+{% include 'home/newuser.html.twig' %}
+
+
+ {% for item in product%}
+
+        <tr>
+            
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>
+
+        </tr>
+ {% endfor %}
+
+{% endblock %}

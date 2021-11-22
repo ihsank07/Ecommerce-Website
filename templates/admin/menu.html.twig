@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="example-wrapper">
+    <hr>
+        <a href="{{path('admin_category')}}" class="button"> Tüm Kategoriler </a>
+        <a href="{{path('admin_category_create')}}" class="button"> Yeni Kategori </a>
+    </hr>
+    <hr>
+        <a href="{{path('admin_product')}}" class="button"> Tüm Ürünler </a>
+        <a href="{{path('admin_product_create')}}" class="button"> Yeni Ürün </a>
+    </hr>
+    <hr>
+        <a href="{{path('admin_order')}}" class="button"> Beklemedeki Siparişler </a>
+        <a href="{{path('admin_order_confirm')}}" class="button">Onaylanan Siparişler </a>
+        
+</div>
+
+{% endblock %}

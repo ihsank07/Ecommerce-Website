@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sepet Sayfası!
+{% endblock %}
+
+{% block body %}
+ {% include 'inc/navbar.html.twig'  %}  
+	{% for i in urundevam %}
+
+		{% for x in i.productinbasket %}
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">{{x.name}}</h5>
+
+					
+					{{i.quantity}}
+					<p class="card-text">{{x.description}}</p>
+					<a href="#" class="card-link">Card link</a>
+					<a href="{{path('product_remove',{id: i.id})}}" class="delete">Ürünü Sil</a>
+
+
+				</div>
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+
+	{% if urundevam %}
+	<div class="col-md-4">
+		<div class="card mt-4 mt-md-0">
+			<h5 class="card-header bg-dark text-white">Özet</h5>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item d-flex justify-content-between">
+					<div>
+						<b>Toplam</b>
+					</div>
+					<span>
+						<b>
+						İndirim Tutarı= {{indirim}}	Tutar :{{total}} TL</b>
+					</span>
+				</li>
+			</ul>
+			<div class="card-body">
+				<a href="{{  path('order') }}" class="btn btn-warning w-100">Sipariş Ver </a>
+			</div>
+		</div>
+	</div>
+	{% else %}
+	<div class="col-md-4">
+	<div class="col-md-4">
+		<div class="card mt-4 mt-md-0">
+			<h5 class="card-header bg-dark text-white">Sepet</h5>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item d-flex justify-content-between">
+					<div>
+						<b>Sepetiniz Boş</b>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	</div>
+
+	{% endif %}
+
+
+{% endblock %}
