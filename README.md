@@ -7,8 +7,8 @@
 ##  Özellikler
 ## User Bölümü
 
-#### Kategorileri gürüntüleyebilir, ürünleri giriş yaparak sepetinize atabilirsiniz,sepet kısmında indirimleriniz görüntülenebilir formu doldurarak siparişi tamamlayabilirsiniz. S
+#### Kategorileri gürüntüleyebilir, ürünleri giriş yaparak sepetinize atabilirsiniz,sepet kısmında indirimleriniz görüntülenebilir formu doldurarak siparişi tamamlayabilirsiniz. 
 
 ## Admin Bölümü 
 ####  ROLE_ADMIN yetkisyle URL'ye localhost:8000/admin yazarak ulaşabilirsiniz
-#### Katagori listelemei,ekleme,silme , ürün listeleme ekleme silme, sipariş onay bölümleri mevcuttur
+#### Katagori listeleme,ekleme,silme , ürün listeleme ekleme silme, sipariş onay bölümleri mevcuttur
