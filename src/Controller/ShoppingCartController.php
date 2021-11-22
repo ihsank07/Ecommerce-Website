@@ -42,9 +42,7 @@ class ShoppingCartController extends AbstractController
             ->getTimes($userid);
         $parentcategory =   $this->getDoctrine()
             ->getRepository(Category::class);
-        $manshoe = $this->getDoctrine()
-            ->getRepository(ShoppingCart::class)
-            ->getCategoryShoes($userid);
+
 
         $urun = $this->getDoctrine()
             ->getRepository(ShoppingCart::class);
@@ -131,24 +129,6 @@ class ShoppingCartController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/shopping/cart/{id}", name="product_remove")
-     */
-    public function remove($id)
-    {
-        try {
-
-            $em = $this->getDoctrine()->getManager();
-            $category_item = $em->find(ShoppingCart::class, $id);
-            if (!$category_item) {
-                throw new ExceptionNotFoundHttpException("Kategori Yok");
-            }
-            $em->remove($category_item);
-            $em->flush();
-            $this->addFlash("success", "Kategori Başarıyla Silindi");
-        } catch (\Exception $e) {
-            $this->addFlash("danger", "Kategori Silinemedi");
-        }
-        return $this->redirectToRoute('shopping_cart');
-    }
+ 
+    
 }

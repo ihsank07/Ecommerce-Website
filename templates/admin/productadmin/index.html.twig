@@ -14,13 +14,16 @@
         <th>ID</th>
         <th>Name</th>
         <th>Price</th>
+        <th>Açıklama</th>
         <th>Kategori</th>
+        
     <tbody>
-        {% for item in items%}
+        {% for item in items %}
         <tr>
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
             <td>{{item.price}}</td>
+            <td>{{item.description}}</td>}
             {% for category in item.category %}
                   <td>{{ category.name }}</td>
             {% endfor %}

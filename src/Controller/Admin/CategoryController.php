@@ -64,6 +64,7 @@ class CategoryController extends AbstractController
      */
     public function remove($id)
     {
+        
         try {
 
             $em = $this->getDoctrine()->getManager();

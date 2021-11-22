@@ -59,12 +59,13 @@ class ProductController extends AbstractController
     }
 
 
-        /**
+    /**
      * @Route("/admin/product/remove/{id}", name="product_remove")
      */
     public function remove($id){
+         
         try {
-    
+          
             $em = $this->getDoctrine()->getManager();
             $product_item = $em->find(Product::class, $id);
             if(!$product_item)
