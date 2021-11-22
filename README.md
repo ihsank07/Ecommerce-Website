@@ -12,3 +12,8 @@
 ## Admin Bölümü 
 ####  ROLE_ADMIN yetkisyle URL'ye localhost:8000/admin yazarak ulaşabilirsiniz
 #### Katagori listeleme,ekleme,silme , ürün listeleme ekleme silme, sipariş onay bölümleri mevcuttur
+
+
+## Kullanılan Teknolojiler
+### Symfony frameworku kullanılmıştır
+### Projenin backend kısmında PHP frontend kısmında Bootstrap kullanılmıştır
