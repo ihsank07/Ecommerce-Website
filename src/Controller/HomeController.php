@@ -19,7 +19,7 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $em=$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $product = $em->getRepository(Product::class)->findAll();
         $category = $em->getRepository(Category::class)->findAll();
         $user = $this->getUser();
@@ -29,33 +29,36 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'product' => $product,
             'category' => $category,
-            'user'=> $user,
+            'user' => $user,
 
         ]);
     }
-        /**
+    /**
      * @Route("/category/{id}", name="category.detail")
      */
     public function categoryDetail(Category $category): Response
     {
-        $pro  =$category->getProduct();
+        $pro  = $category->getProduct();
 
 
 
-        $em=$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
         $product = $em->getRepository(Product::class)->findAll();
 
         $category = $em->getRepository(Category::class)->findAll();
-        
+
         $user = $this->getUser();
+
+
+
 
         return $this->render('home/detail.html.twig', [
             'controller_name' => 'HomeController',
             'product' => $product,
             'category' => $category,
-            'user'=> $user,
-            'pro'=>$pro
+            'user' => $user,
+            'pro' => $pro
 
         ]);
     }

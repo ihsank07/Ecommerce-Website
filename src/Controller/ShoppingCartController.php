@@ -129,6 +129,30 @@ class ShoppingCartController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/shopping/cart/remove/{id}", name="product_remove")
+     */
+    public function remove($id){
+         
+        try {
+          
+            $em = $this->getDoctrine()->getManager();
+            $product_item = $em->find(ShoppingCart::class, $id);
+            if(!$product_item)
+            {
+            throw new NotFoundHttpException("Kategori Yok");
+            }
+            $em->remove($product_item);
+            $em->flush();
+            $this->addFlash("success" , "Kategori Başarıyla Silindi");
+
+
+        } catch (\Exception $e) {
+            $this->addFlash("danger", "Kategori Silinemedi");
+        }
+        return $this->redirectToRoute('shopping_cart');
+
+    }
  
     
 }

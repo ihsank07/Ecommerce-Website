@@ -60,7 +60,7 @@ class ProductController extends AbstractController
 
 
     /**
-     * @Route("/admin/product/remove/{id}", name="product_remove")
+     * @Route("/admin/product/remove/{id}", name="admin_product_remove")
      */
     public function remove($id){
          
