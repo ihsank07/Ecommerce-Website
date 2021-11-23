@@ -97,18 +97,20 @@ class ShoppingCartController extends AbstractController
             sort($ayaktoplam);
             sort($deger);
             $bolum = $x / 3;
-
+            $bolumyarıyarıya = floor($yarıyarıya/2);
             if ($x >= 3) {
                 for ($x = 0; $x < floor($bolum); $x++) {
 
                     $indirim += $ayaktoplam[$x];
                 }
             }
+      
             if ($yarıyarıya >= 2) {
-                for ($i = 0; $i < $yarıyarıya / 2; $i++) {
+                for ($i = 0; $i < $bolumyarıyarıya; $i++) {
                     $indirim += $deger[$i] / 2;
                 }
             }
+
 
             $total = $total - $indirim;
             $order = new shoppingcarttotal();
