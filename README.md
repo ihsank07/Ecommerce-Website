@@ -11,7 +11,7 @@
 
 ## Admin Bölümü 
 ####  ROLE_ADMIN yetkisyle URL'ye localhost:8000/admin yazarak ulaşabilirsiniz. ROLE_ADMIN yetkisi sadece veritabanından verilebilir.
-####  Veritabanıyla uğraşmamak için Kullanıcı Adı : ihsan Şifre : delice ile admin paneline girebilirsiniz
+####  Veritabanıyla uğraşmamak için Kullanıcı Adı : ihsan Şifre : delice ile admin paneline girebilirsiniz(sql dosyasının kopyalanması gerekir) 
 #### Katagori listeleme,ekleme,silme , ürün listeleme ekleme silme, sipariş onay bölümleri mevcuttur
 
 
