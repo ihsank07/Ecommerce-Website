@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 22 Kas 2021, 07:13:13
+-- Üretim Zamanı: 24 Kas 2021, 21:58:57
 -- Sunucu sürümü: 10.4.21-MariaDB
 -- PHP Sürümü: 8.0.11
 
@@ -53,8 +53,7 @@ INSERT INTO `category` (`id`, `name`, `parent_id`) VALUES
 (23, 'Spor Ayakkabı', 12),
 (24, 'Ev&Yaşam', NULL),
 (25, 'Sofra', 24),
-(26, 'Banyo', 24),
-(27, 'Ev Tekstili', 24);
+(26, 'Banyo', 24);
 
 -- --------------------------------------------------------
 
@@ -244,60 +243,28 @@ CREATE TABLE `shoppingcarttotal` (
 --
 
 INSERT INTO `shoppingcarttotal` (`id`, `userid`, `total`) VALUES
-(9, 6, 375),
-(10, 6, 375),
-(11, 6, 375),
-(12, 6, 375),
-(13, 6, 150),
-(14, 6, 200),
-(15, 6, 150),
-(16, 6, 500),
-(17, 6, 750),
-(18, 6, 250),
-(19, 6, 250),
-(20, 6, 250),
-(21, 6, 500),
-(22, 6, 1000),
-(23, 6, 1000),
-(24, 6, 1000),
-(25, 6, 1000),
-(26, 6, 1000),
-(27, 6, 1000),
-(28, 6, 375),
-(29, 6, 375),
-(30, 6, 500),
-(31, 6, 500),
-(32, 6, 550),
-(33, 6, 750),
-(34, 6, 850),
-(35, 6, 1350),
-(36, 6, 1600),
-(37, 6, 50),
-(38, 6, 100),
-(39, 6, 600),
-(40, 6, 600),
-(41, 6, 700),
-(42, 6, 700),
-(43, 6, 650),
-(44, 6, 750),
-(45, 6, 750),
-(46, 6, 600),
-(47, 6, 800),
-(48, 6, 1300),
-(49, 6, 1100),
-(50, 6, 1300),
-(51, 6, 1300),
-(52, 6, 1500),
-(53, 6, 1500),
-(54, 6, 1100),
-(55, 6, 600),
-(56, 6, 100),
-(57, 6, 100),
-(58, 6, 150),
-(59, 6, 150),
-(60, 6, 150),
-(61, 6, 150),
-(62, 8, 75);
+(66, 6, 500),
+(67, 6, 900),
+(68, 6, 900),
+(69, 6, 900),
+(70, 6, 900),
+(71, 6, 900),
+(72, 6, 900),
+(73, 6, 500),
+(74, 6, 500),
+(75, 6, 500),
+(76, 6, 500),
+(77, 6, 900),
+(78, 6, 900),
+(79, 6, 500),
+(80, 6, 700),
+(81, 6, 200),
+(82, 6, 150),
+(83, 6, 300),
+(84, 6, 150),
+(85, 6, 200),
+(86, 6, 250),
+(87, 6, 400);
 
 -- --------------------------------------------------------
 
@@ -318,14 +285,6 @@ CREATE TABLE `shopping_cart` (
   `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Tablo döküm verisi `shopping_cart`
---
-
-INSERT INTO `shopping_cart` (`id`, `created_at`, `quantity`, `username_id`, `productname`, `price`, `userid`, `productid`, `unitprice`, `category`) VALUES
-(172, '2021-11-22 06:46:28', 2, 6, 'klavye', 200, 6, 12, 100, '1'),
-(173, '2021-11-22 06:54:06', 2, 8, 'Tshirt', 100, 8, 13, 50, '11');
-
 -- --------------------------------------------------------
 
 --
@@ -336,14 +295,6 @@ CREATE TABLE `shopping_cart_product` (
   `shopping_cart_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Tablo döküm verisi `shopping_cart_product`
---
-
-INSERT INTO `shopping_cart_product` (`shopping_cart_id`, `product_id`) VALUES
-(172, 12),
-(173, 13);
 
 -- --------------------------------------------------------
 
@@ -367,7 +318,9 @@ INSERT INTO `user` (`id`, `username`, `roles`, `password`) VALUES
 (8, 'metin', '[]', '$argon2id$v=19$m=65536,t=4,p=1$MTJQVVYyNlozQ29BMVY1aA$FdftUW/f444D89A8XeXYQqDYyKDBw3tNefw46WKJ488'),
 (9, 'aslan', '[]', '$argon2id$v=19$m=65536,t=4,p=1$b1dWZ0FCRnluT0JmUHpKUw$mz0Gd58xYuTRk1N6fLC86l0aA5uwLROW2+0EA67q0+U'),
 (10, 'burak', '[]', '$argon2id$v=19$m=65536,t=4,p=1$SzdaU2p0b3FoTzFqNG5mMw$diVxB2FsuoBroR/2uljJlwfudjNCkpTZdKMNH2Z36VU'),
-(11, 'kaya', '[]', '$argon2id$v=19$m=65536,t=4,p=1$SGN2Y1E0bnBjSzZTY3pKaQ$3m081CDFQkEdOGU9yj3CGCPpmEw+Qt3JLhvEbz9rpII');
+(11, 'kaya', '[]', '$argon2id$v=19$m=65536,t=4,p=1$SGN2Y1E0bnBjSzZTY3pKaQ$3m081CDFQkEdOGU9yj3CGCPpmEw+Qt3JLhvEbz9rpII'),
+(12, 'ihsank97', '[]', '$argon2id$v=19$m=65536,t=4,p=1$WUhPYS5vc0U0T21UOE5XYw$UbI7EsI7tL9rFPVmPaYp819ZRzhLUhReNriz0+FCEDc'),
+(13, 'ihsan', '[\"ROLE_ADMIN\"]', '$argon2id$v=19$m=65536,t=4,p=1$OFllcTNkSDNzRUdEZ2hEbQ$LXvFQFoNiX5ZB0zB0CEiPIgoiMo+xn/DRoA/PHExGsY');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -464,7 +417,7 @@ ALTER TABLE `user`
 -- Tablo için AUTO_INCREMENT değeri `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `order`
@@ -482,25 +435,25 @@ ALTER TABLE `order_product`
 -- Tablo için AUTO_INCREMENT değeri `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `shoppingcarttotal`
 --
 ALTER TABLE `shoppingcarttotal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
