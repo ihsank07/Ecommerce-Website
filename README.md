@@ -10,7 +10,8 @@
 #### Kategorileri gürüntüleyebilir, ürünleri giriş yaparak sepetinize atabilirsiniz,sepet kısmında indirimleriniz görüntülenebilir formu doldurarak siparişi tamamlayabilirsiniz. 
 
 ## Admin Bölümü 
-####  ROLE_ADMIN yetkisyle URL'ye localhost:8000/admin yazarak ulaşabilirsiniz
+####  ROLE_ADMIN yetkisyle URL'ye localhost:8000/admin yazarak ulaşabilirsiniz. ROLE_ADMIN yetkisi sadece veritabanından verilebilir.
+####  Veritabanıyla uğraşmamak için Kullanıcı Adı : ihsan Şifre : delice ile admin paneline girebilirsiniz
 #### Katagori listeleme,ekleme,silme , ürün listeleme ekleme silme, sipariş onay bölümleri mevcuttur
 
 
