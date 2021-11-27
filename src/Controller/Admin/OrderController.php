@@ -20,13 +20,14 @@ class OrderController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $repository =$em->getRepository(Order::class);
         $items = $repository->findBy(['status'=> 0]);
-
+        $user = $this->getUser();
         
 
 
         return $this->render('admin/order/index.html.twig', [
             'controller_name' => 'OrderController',
-            'items' => $items
+            'items' => $items,
+            'user' => $user
         ]);
     }
     /**
@@ -38,11 +39,12 @@ class OrderController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $repository =$em->getRepository(Order::class);
         $items = $repository->findBy(['status'=> 1]);
-
+        $user = $this->getUser();
 
         return $this->render('admin/order/confirm.html.twig', [
             'controller_name' => 'OrderController',
-            'items'=>$items
+            'items'=>$items,
+            'user' => $user
         ]);
     }    
     /**

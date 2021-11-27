@@ -1,34 +1,37 @@
-
 {% extends 'base.html.twig' %}
 
-{% block title %}Hoşgeldiniz!{% endblock %}
+{% block title %}Hoşgeldiniz!
+{% endblock %}
 {% block body %}
-
- {% include 'inc/navbar.html.twig'  %}  
-
-<div class="container">
-
-    <div class="row">    
-        {% for category in category %}
-             <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://via.placeholder.com/200x150" alt="{{ category.name }}" class="card-img-top">       
-                    <div class="card-body">
-                    <h5 class="card-title">{{ category.name }}</h5>
-                
-  
-            <div class="d-flex justify-content-between align-item-center">
-                    <a href="{{ path('category.detail', {id: category.id}) }}" class="btn btn-dark">
-                    Kategoriyi Görüntüle
-                    </a>
+	{% if is_granted('ROLE_ADMIN') %}
+		{% include 'admin/inc/adminnav.html.twig'  %}
+        {% include 'inc/navbar.html.twig'  %}
                     
-                        </div>
-                    </div>
-                </div>
-            </div>        
- {% endfor %}
-    </div>
-</div>
+	{% else %}
+		{% include 'inc/navbar.html.twig'  %}
+	{% endif %}
+	<div class="container">
+
+		<div class="row">
+			{% for category in category %}
+				<div class="col-md-4">
+					<div class="card mb-4">
+						<img src="https://via.placeholder.com/200x150" alt="{{ category.name }}" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">{{ category.name }}</h5>
+
+
+							<div class="d-flex justify-content-between align-item-center">
+								<a href="{{ path('category.detail', {id: category.id}) }}" class="btn btn-dark">
+									Kategoriyi Görüntüle
+								</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 
 {% endblock %}
-

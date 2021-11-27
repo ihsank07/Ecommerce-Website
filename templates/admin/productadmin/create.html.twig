@@ -3,7 +3,13 @@
 {% block title %}Ürün Sayfası!{% endblock %}
 
 {% block body %}
-
+	{% if is_granted('ROLE_ADMIN') %}
+		{% include 'admin/inc/adminnav.html.twig'  %}
+        {% include 'inc/navbar.html.twig'  %}
+                    
+	{% else %}
+		{% include 'inc/navbar.html.twig'  %}
+	{% endif %}
 
 
 {{form(form)}}

@@ -3,7 +3,13 @@
 {% block title %}Siparişi Tamamla{% endblock %}
 
 {% block body %}
- {% include 'inc/navbar.html.twig'  %}  
+	{% if is_granted('ROLE_ADMIN') %}
+		{% include 'admin/inc/adminnav.html.twig'  %}
+        {% include 'inc/navbar.html.twig'  %}
+                    
+	{% else %}
+		{% include 'inc/navbar.html.twig'  %}
+	{% endif %}
 <div class="col-md-8">
 
     <hr>

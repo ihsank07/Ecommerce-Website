@@ -30,7 +30,6 @@ class ShoppingCartController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
         $userid = $user->getId();
-        //methodları vscode görmemesine rağmen çalışıyor hatasız 
         $cheapest = $this->getDoctrine()
             ->getRepository(ShoppingCart::class)
             ->getSmallest($userid);

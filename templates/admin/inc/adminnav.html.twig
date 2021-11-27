@@ -1,84 +1,58 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="{{path('home')}}">Anasayfa</a>
+		<a class="navbar-brand" href="{{path('home')}}">Admin Anasayfa</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
+				
 					<a class="nav-link dropdown-toggle" href="{{path('home')}}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Kadın
+						Kategori
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 11}	) }}	">Giyim</a>
+						
+							<a class="dropdown-item" href="{{path('admin_category')}}" class="button"> Tüm Kategoriler </a>
+							 
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 12}	) }}	">Ayakkabı</a>
+							<a class="dropdown-item" href="{{path('admin_category_create')}}" class="button"> Yeni Kategori </a>
 						</li>
-						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 18}	) }}	">Aksesuar</a>
-						</li>
+
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Erkek
+						Ürünler
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 11}	) }}	">Giyim</a>
+							<a class="dropdown-item" href="{{path('admin_product')}}" class="button"> Tüm Ürünler </a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 12}	) }}	">Ayakkabı</a>
+							<a class="dropdown-item" href="{{path('admin_product_create')}}" class="button"> Yeni Ürün </a>
 						</li>
-						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 13}	) }}	">Saat</a>
-						</li>
+
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Çocuk
+						Siparişler
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 20}	) }}	">Bebek</a>
+							<a class="dropdown-item" href="{{path('admin_order')}}" class="button"> Beklemedeki Siparişler </a>
+							 
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 22}	) }}	">Kız Çocuk</a>
+							<a class="dropdown-item"  href="{{path('admin_order_confirm')}}" class="button">Onaylanan Siparişler </a>
 						</li>
-						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 21}	) }}	">Erkek Çocuk</a>
-						</li>
+
 					</ul>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Ev & Yaşam
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 25}	) }}	">Sofra</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 26}	) }}	">Banyo</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{	path('category.detail' , {id: 27}	) }}	">Ev Tekstili</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<ul class="">
-						{% if is_granted('ROLE_USER') %}
-							<a href="{{ path('shopping_cart', {id: user.id}) }}" class="btn btn-dark">
-								Sepetim
-							</a>
-						{% endif %}
-					</ul>
-				</li>
+			
 				    <li>
 						{% if is_granted('ROLE_USER') %}
 							<a class="nav-link" href="{{ path('app_logout') }}">Çıkış Yap</a>
@@ -86,9 +60,7 @@
                         <li>
 							<a class="nav-link" href="{{ path('app_login') }}">Giriş Yap</a>
 						</li>
-                        <li>
-							<a class="nav-link" href="{{ path('app_register') }}">Kayıt Ol</a>
-						</li>
+
                         {% endif %}
 				    </li>
 			</ul>

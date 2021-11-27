@@ -20,10 +20,13 @@ class ProductController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $repository =$em->getRepository(Product::class);
         $items = $repository->findAll();
+        $user = $this->getUser();
 
         return $this->render('admin/productadmin/index.html.twig', [
             'controller_name' => 'ProductController',
             'items' => $items,
+            'user' => $user,
+
             
         ]);
     }
@@ -35,7 +38,7 @@ class ProductController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $product_item=new Product();
 
-
+        $user = $this->getUser();
         $form = $this->createForm(ProductFormType::class,$product_item);
         $form->handleRequest($request);
      
@@ -52,7 +55,8 @@ class ProductController extends AbstractController
     
 
         return $this->render('admin/productadmin/create.html.twig',[
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'user' => $user,
         ]);
 
 

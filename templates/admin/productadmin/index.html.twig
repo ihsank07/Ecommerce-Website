@@ -5,7 +5,13 @@
 {% block body %}
 
 
-<a href="{{path('admin_product_create')}}" class="btn btn-primary">Yeni İçerik Ekle</a>
+	{% if is_granted('ROLE_ADMIN') %}
+		{% include 'admin/inc/adminnav.html.twig'  %}
+        {% include 'inc/navbar.html.twig'  %}
+                    
+	{% else %}
+		{% include 'inc/navbar.html.twig'  %}
+	{% endif %}
 
 
 <table class = " table">

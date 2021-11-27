@@ -23,11 +23,11 @@ class CategoryController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository(Category::class);
         $items = $repository->findAll();
-
+        $user = $this->getUser();
         return $this->render('admin/categoryadmin/index.html.twig', [
             'controller_name' => 'CategoryController',
             'items' => $items,
-
+            'user'=> $user
 
         ]);
     }
@@ -39,7 +39,7 @@ class CategoryController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
         $category_item = new Category();
-
+        $user = $this->getUser();
 
         $form = $this->createForm(CategoryType::class, $category_item);
         $form->handleRequest($request);
@@ -56,6 +56,7 @@ class CategoryController extends AbstractController
 
 
         return $this->render('admin/categoryadmin/create.html.twig', [
+            'user'=> $user,
             'form' => $form->createView()
         ]);
     }
