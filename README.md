@@ -2,7 +2,7 @@
 ## PHP Symfony ile yapılmış E-ticaret Web Uygulamasıdır. 
 
 ## Kullanımı
-#### Localinize indirirek kurabilirsiniz, veritabanı dosyası eticaret.sql dosyası içindedir. 
+ Localinize indirirek kurabilirsiniz, veritabanı dosyası eticaret.sql dosyası içindedir. 
 
 ##  Özellikler
 ## User Bölümü
@@ -16,5 +16,5 @@
 
 
 ## Kullanılan Teknolojiler
-### Symfony frameworku kullanılmıştır
-### Projenin backend kısmında PHP frontend kısmında Bootstrap kullanılmıştır
+ Symfony frameworku kullanılmıştır
+ Projenin backend kısmında PHP frontend kısmında Bootstrap kullanılmıştır
