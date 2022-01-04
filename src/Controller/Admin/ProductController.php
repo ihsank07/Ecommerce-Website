@@ -27,7 +27,6 @@ class ProductController extends AbstractController
             'items' => $items,
             'user' => $user,
 
-            
         ]);
     }
     /**

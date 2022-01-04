@@ -14,7 +14,7 @@
     <b>Açıklama: </b>{{ product.description }}
     {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light'}}) }}
     <div class="form-group">
-        {{ form_label(form.quantity) }}
+        {{ form_label(form.quantity, ) }}
         {{ form_widget(form.quantity, {
             'attr': {
                 'class': 'form-control ' ~ (form.quantity.vars.valid ? '' : 'is-invalid')
