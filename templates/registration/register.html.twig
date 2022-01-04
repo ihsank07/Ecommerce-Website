@@ -4,15 +4,20 @@
 
 {% block body %}
  {% include 'inc/navbar.html.twig'  %}  
-    <h1>Register</h1>
+    <h1>Kayıt Ol</h1>
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+        {{ form_row(registrationForm.username, {
+            label: 'Kullanıcı Adı'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Şifte'
+        }) }}
+        {{ 
+            form_row(registrationForm.agreeTerms,{
+            label: 'Şartları Kabul' 
+        }) }}
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn">Kayıt Ol</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
